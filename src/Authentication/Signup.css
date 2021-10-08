@@ -1,0 +1,56 @@
+
+.container{
+    height: 100vh;
+    width: 100%;
+} 
+.row{
+    width: 100%;
+    padding: 5%;
+}
+.signupbox{
+    width: 75%;
+    margin: auto;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #ffffff;
+    -webkit-box-shadow: 30px 30px 60px #adadad, -30px -30px 60px #ffffff;
+    box-shadow: 30px 30px 60px #adadad, -30px -30px 60px #ffffff;
+}
+form{
+    padding: 5%;
+}
+h1, label{
+    color: #14279B;
+}
+button{
+    color: #14279B;
+    background-color: transparent;
+    border: 1px solid #14279B;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+button:hover{
+    color: white;
+    background-color: #14279B;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+input{
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    color: #14279B;
+}
+input:focus{
+    outline: #14279B solid 1px;
+}
+
+input::placeholder{
+    color: grey;
+}
+
+input::placeholder:focus{
+    color: #14279B;
+}
