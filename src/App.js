@@ -1,10 +1,11 @@
 import './App.css';
 import React, { Component } from 'react';
 import Approval from './components/appoval.jsx';
+import Permission from './components/permission.jsx';
 class App extends Component {
   render() {
     return (
-      // <Permission/>
+        // <Permission/>
       <Approval/>
     );
   }
