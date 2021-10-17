@@ -1,0 +1,35 @@
+
+#text{
+  text-align: center;
+  font-weight: bold;
+  padding: 40px;
+  /* color: rgb(120, 104, 230); */
+  font-size: 60px;
+  height: 50%;
+  background: "#1d3f5e";
+  /* 'linear-gradient(90deg, , #5890c4)'; */
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.homepage-bgimage{
+  background: url("assets/canva3.jpg");
+  height: 100vh;
+  /* background-position:right; */
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row{
+  position: relative;
+  top: 30%;
+  padding: 50px 115px;
+}
