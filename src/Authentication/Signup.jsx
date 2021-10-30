@@ -40,31 +40,31 @@ const actionCodeSettings = {
             <div className = 'signupbox'>
                     <Row>
                         <Col className = 'left'>
-                            <h1>
+                            <h1 className = 'h1'>
                                 Sign Up
                             </h1>
-                            <p style = {{marginTop: '20px'}}>
+                            <p className = 'para'>
                                 Alerady have an account? 
                                 <br />
                             <Link to = '/login'>
-                            <button style = {{marginTop: '10px'}}>
+                            <button className = 'button m-2'>
                                     Login here
                                 </button> 
                             </Link>
                             </p>
                             <Row>
-                            <input type = 'email' style = {{marginTop: '20px' }} onChange = { (e) => setEmail(e.target.value) } placeholder = 'Enter Email'/>
-                            <input type = 'password' style = {{marginTop: '20px' }} onChange = { (e) => setPassword(e.target.value) } placeholder = 'Set Password'/>
-                            <input type = 'password' style = {{marginTop: '20px' }} onChange = { (e) => setConfirmPassword(e.target.value) } placeholder = 'Confirm Password'/>
+                            <input className = 'input my-3 p-2' type = 'email'  onChange = { (e) => setEmail(e.target.value) } placeholder = 'Enter Email'/>
+                            <input className = 'input my-3 p-2' type = 'password'  onChange = { (e) => setPassword(e.target.value) } placeholder = 'Set Password'/>
+                            <input className = 'input my-3 p-2' type = 'password'  onChange = { (e) => setConfirmPassword(e.target.value) } placeholder = 'Confirm Password'/>
                             </Row>
                             <Row>
-                            <button onClick = {sendEmail}>
+                            <button className = 'button' onClick = {sendEmail}>
                                 Send the verification mail
                             </button>
                             </Row>
                         </Col>
                         <Col>
-                         <img style = {{height: '400px', marginTop: '30px'}} src = {image} alt = 'signup'/> 
+                         <img className = 'img' src = {image} alt = 'signup'/> 
                         </Col>
                     </Row>
             </div>

@@ -1,0 +1,10 @@
+.table{
+    position: relative;
+    height: 90%;
+    overflow-y: scroll;
+
+}
+img{
+    position: relative;
+    height: 50%;
+}

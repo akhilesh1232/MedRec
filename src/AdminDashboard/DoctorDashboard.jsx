@@ -2,7 +2,7 @@ import { browserSessionPersistence, setPersistence, signOut } from 'firebase/aut
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import  {Button} from 'reactstrap';
-import { auth } from './Firebase';
+import { auth } from '../Firebase';
 import {useHistory} from 'react-router';
 function Dashboard() {
     const parameters = useParams();

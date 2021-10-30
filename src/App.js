@@ -5,15 +5,15 @@ import Login from './Authentication/Login';
 import Form from './Authentication/Form';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import GetBack from './Authentication/GetBack';
-import Dashboard from './Dashboard';
-
+import Dashboard from './AdminDashboard/DoctorDashboard';
+import AdminDashboard from './AdminDashboard/AdminDashboard';
 
 function App() {  
   return (
     <BrowserRouter>
       <Switch>
       <Route exact path = '/'>
-          <Login />  
+          <AdminDashboard />  
         </Route> 
         <Route exact path = '/form'>
             <Form />

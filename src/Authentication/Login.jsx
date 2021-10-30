@@ -114,32 +114,29 @@ function Login() {
     }
     
     return (
-        <Container className = 'container'>
-        <Row className = 'row'>
+        <Container>
+        <Row>
             <div className = 'signupbox'>
                     <Row>
                         <Col className = 'left'>
                         <form>
-                            {/* <Row> */}
-                            <h1>
+                            <h1 className = 'h1'>
                                 Log In
                             </h1>
-                            <p style = {{marginTop: '20px'}}>
+                            <p className = 'para'>
                                 Don't have an account? 
                                 <br />
                                 <Link to = '/signup'>
-                                <button style = {{marginTop: '10px'}}>
+                                <button className = 'button'>
                                     Sign up
                                 </button> 
                                 </Link>
                             </p>
-                            {/* </Row> */}
                             <Row>
                             <Label> Choose a role to login: </Label>
                             <Input 
                                 required = {true}
                                 className = 'input' 
-                                style = {{marginTop: '15px', border: '2px solid black'}} 
                                 type = 'select' 
                                 name = 'select' 
                                 onChange = {(e)=>setRole(e.target.value)}>
@@ -148,19 +145,21 @@ function Login() {
                             <option value = 'Administrator'>Administrator</option>
                             </Input>
                             <input 
-                                style = {{ marginTop: '20px' }} 
+                                className = 'input'
                                 placeholder = {(role === 'Administrator')?'Enter the Id':'Enter the Health Id'}
                                 onChange = {(e)=>setHealthId(e.target.value)}
                             />
                             <input 
                                 type = 'password'
-                                style = {{ marginTop: '20px' }} 
+                                className = 'input'
                                 placeholder = 'Enter Password'
                                 onChange = {(e)=>setPassword(e.target.value)}
                             />
                             </Row>
                             <Row>
-                            <button onClick = {(e)=>{
+                            <button 
+                            className = 'button'
+                            onClick = {(e)=>{
                                 e.preventDefault();
                                 LogInWithHealthId();
                             }}>
@@ -170,7 +169,7 @@ function Login() {
                         </form>
                         </Col>
                         <Col>
-                         <img style = {{ width: '100%',height: '100%', marginTop: '30px' }} src = {image} alt = 'login'/> 
+                         <img className = 'img' src = {image} alt = 'login'/> 
                         </Col>
                     </Row>
             </div>

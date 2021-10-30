@@ -16,13 +16,19 @@
     -webkit-box-shadow: 30px 30px 60px #adadad, -30px -30px 60px #ffffff;
     box-shadow: 30px 30px 60px #adadad, -30px -30px 60px #ffffff;
 }
-form{
-    padding: 5%;
+.img{
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
-h1, label{
+.h1{
     color: #14279B;
 }
-button{
+
+.label{
+    color: #14279B;
+}
+.button{
     color: #14279B;
     background-color: transparent;
     border: 1px solid #14279B;
@@ -30,24 +36,24 @@ button{
     padding: 5px 10px;
     transition: 0.3s;
 }
-button:hover{
+.button:hover{
     color: white;
     background-color: #14279B;
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px 10px;
 }
-input{
+.input{
     padding: 5px;
     outline: none;
     border: 1px solid black;
     color: #14279B;
 }
-input:focus{
+.input:focus{
     outline: #14279B solid 1px;
 }
 
-input::placeholder{
+.input::placeholder{
     color: grey;
 }
 
