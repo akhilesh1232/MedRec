@@ -5,9 +5,25 @@ import { Container, Table, Button } from 'reactstrap';
 import {firestore} from '../Firebase';
 import {doc, deleteDoc} from 'firebase/firestore';
 import nothing_image from '../Assets/nothing.svg';
+import emailjs from 'emailjs-com';
 export default function PatientList() {
     const [data, setData] = useState([]);
+    function sendEmail(template,index,type)
+    {
+        var params={
+            user_name:data[index].first_name+' '+data[index].last_name,
+            user_type:type ,
+            user_mail:data[index].email,
+           };
+        emailjs.send('service_a1n6mpb',template, params,'user_cM6CLwMPM81CRZ4B5f7rr')
+              .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+              }, function(error) {
+                console.log('FAILED...', error);
+              });
+    }
     const allowed = (index) => {
+        var type='';
         console.log(index);
         if(data[index].degreeUrl === '-')
         {
@@ -28,6 +44,7 @@ export default function PatientList() {
                 console.log('Something went wrong here...');
                 window.location.reload();
             })
+            type='patient';
         }
         else
         {
@@ -48,10 +65,10 @@ export default function PatientList() {
                 console.log('Something went wrong here...');
                 window.location.reload();
             })
+            type='doctor';
         }
+         sendEmail('template_2imq7la',index,type);
     }
-
-
     const deny = (index) => { 
         deleteDoc(doc(firestore, 'unauthorised/', data[index].adharNumber))
         .then((e)=>{
@@ -63,8 +80,9 @@ export default function PatientList() {
             alert('Problem in deletion of user');
             window.location.reload();
         })
-        
+        sendEmail('template_nn3j6oq',index,'');
     }
+   
     useEffect(()=>{
         const dataArray = []
         getDocs(collection(firestore, 'unauthorised'))
@@ -72,15 +90,15 @@ export default function PatientList() {
             querySnapshot.forEach((doc)=>{
                 let userData = doc.data();
                 dataArray.push({
-                    adharUrl: userData.AdharUrl,
-                    selfieUrl: userData.SelfieUrl,
+                    adharUrl: userData.adharUrl,
+                    selfieUrl: userData.selfieUrl,
                     first_name: userData.first_name,
                     middle_name: userData.middle_name,
                     last_name: userData.last_name,
                     email: userData.email,
                     password: userData.password,
                     adharNumber: userData.adharNumber ,
-                    degreeUrl: (userData.DegreeUrl)?userData.DegreeUrl:'-'
+                    degreeUrl: (userData.degreeUrl)?userData.degreeUrl:'-'
                 });
             })
             //dataArray.pop();
