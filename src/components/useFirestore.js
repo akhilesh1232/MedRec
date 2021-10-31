@@ -4,6 +4,7 @@ import { collection, getDocs ,doc,onSnapshot,query,where} from "firebase/firesto
 const useFirestore = () => {
   const [docs, setDocs] = useState([]);
 useEffect(() => {
+  //put currently logged in patient's ID instead of '123'
   const unsub = onSnapshot(query(collection(firestore,'reports'),where('Patient_ID','==','123')), (querySnapshot) => {
     const documents = [];
     querySnapshot.forEach((doc) => {
