@@ -4,7 +4,7 @@ import { collection, getDocs ,doc,onSnapshot,query,where} from "firebase/firesto
 const useFirestore = () => {
   const [docs, setDocs] = useState([]);
 useEffect(() => {
-  const unsub = onSnapshot(query(collection(firestore,'reports')), (querySnapshot) => {
+  const unsub = onSnapshot(query(collection(firestore,'reports'),where('Patient_ID','==','123')), (querySnapshot) => {
     const documents = [];
     querySnapshot.forEach((doc) => {
         documents.push({...doc.data(), id: doc.id});
