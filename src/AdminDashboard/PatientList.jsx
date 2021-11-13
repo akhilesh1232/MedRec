@@ -87,7 +87,7 @@ export default function PatientList() {
             setData(dataArray);
             console.log(data);
         })
-    },[data.length]);
+    },[data]);
     if(data.length === 0)
     {
         return(

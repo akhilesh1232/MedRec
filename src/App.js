@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {Component} from 'react';
 import Signup from './Authentication/Signup';
 import Login from './Authentication/Login';
 import Form from './Authentication/Form';
@@ -7,12 +7,16 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import GetBack from './Authentication/GetBack';
 import Dashboard from './AdminDashboard/DoctorDashboard';
 import AdminDashboard from './AdminDashboard/AdminDashboard';
-
-function App() {  
-  return (
-    <BrowserRouter>
+import BloackChainData from './BloackChainData';
+class App extends Component {
+  render() {
+    return (
+        <BrowserRouter>
       <Switch>
-      <Route exact path = '/'>
+      <Route>
+          <BloackChainData />
+      </Route>
+      <Route exact path = '/admin/:id'>
           <AdminDashboard />  
         </Route> 
         <Route exact path = '/form'>
@@ -32,7 +36,9 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
-  );
+    );
+  }
 }
+
 
 export default App;
