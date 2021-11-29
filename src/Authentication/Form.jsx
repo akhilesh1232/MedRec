@@ -25,17 +25,18 @@ function Form() {
         let email = localStorage.getItem('email');
         let password = localStorage.getItem('password');
         createUserWithEmailAndPassword(auth, email, password)
-        .then((user) =>{
-        const storageRef1 =  ref(storage, 'auth/Adhar/adharImage'+adhar_number);
-        uploadBytes(storageRef1, adharImage)
-        .then( (snapshot)=>{
-             getDownloadURL(snapshot.ref)
-            .then( (downloadURL) => {
-                setDoc(doc(firestore, 'unauthorised/', adhar_number),{
-                    AdharUrl: downloadURL,
-                },{merge: true})
-                .then((e)=>console.log('successfully added adhar url'))
-                .catch((e)=>console.log(e));
+        .then((user)=>{
+            const storageRef1 =  ref(storage, 'auth/Adhar/adharImage'+adhar_number);
+            uploadBytes(storageRef1, adharImage)
+            .then( (snapshot)=>{
+                 getDownloadURL(snapshot.ref)
+                .then( (downloadURL) => {
+                    setDoc(doc(firestore, 'unauthorised/', adhar_number),{
+                        AdharUrl: downloadURL,
+                    },{merge: true})
+                    .then((e)=>console.log('successfully added adhar url'))
+                    .catch((e)=>console.log(e));
+                })
             })
         })
         .then(()=>{
@@ -84,8 +85,7 @@ function Form() {
         .catch((e)=>alert(e.message))
     })
     .catch((e)=>alert(e.message))
-    })
-    .catch((e)=>alert(e.message))
+
 }
 
     useEffect(()=>{
@@ -106,7 +106,7 @@ function Form() {
 
     return (
         <div>
-            <InputForm className = 'form'>
+            <InputForm className = 'wrapper'>
                 <FormGroup style = {{margin: '30px'}}>
                     <Label className = 'label' for = 'firstName'>First Name</Label>
                     <Input 
@@ -166,7 +166,7 @@ function Form() {
                     </Input>
                 </FormGroup>
                 <FormGroup style = {{margin: '30px'}}>
-                <label class="file_upload">
+                <label className="file_upload">
                     <input 
                         required = {true}
                         type="file"
@@ -174,9 +174,12 @@ function Form() {
                     />
                         Upload Adhar Card Photo
                 </label>
+                <h3>
+                    {(adharImage)?adharImage.name:''}
+                </h3>
                 </FormGroup>
                 <FormGroup style = {{margin: '30px'}}>
-                <label class="file_upload">
+                <label className="file_upload">
                     <input 
                         required = { true }
                         type="file"
@@ -184,9 +187,12 @@ function Form() {
                     />
                         Upload Your Selfie with Adhar Card
                 </label>
+                <h3>
+                    {(selfie)?selfie.name:''}
+                </h3>
                 </FormGroup>
                 <FormGroup style = {{margin: '30px'}}>
-                <label class="file_upload">
+                <label className="file_upload">
                     <input 
                         type="file"
                         onChange = {(e)=>setDegree(e.target.files[0])}
@@ -194,6 +200,9 @@ function Form() {
                     />
                         Upload Last Year Degree Certificate ({(role==='Doctor')?'Enabled':'Disabled'})
                 </label>
+                <h3>
+                    {(degree)?degree.name:''}
+                </h3>
                 </FormGroup>
                 <button onClick = {(e)=>{
                     e.preventDefault();

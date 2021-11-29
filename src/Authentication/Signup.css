@@ -29,6 +29,9 @@
     color: #14279B;
 }
 .button{
+    position: relative;
+    width: 30%;
+    margin: 3%;
     color: #14279B;
     background-color: transparent;
     border: 1px solid #14279B;

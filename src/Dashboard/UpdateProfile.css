@@ -1,0 +1,35 @@
+
+.saveButton{
+    margin-top: 3%;
+    text-align: left;
+    background-color: #d5d6de;
+    align-content: center;
+}
+
+.saveButton :hover{
+    background-color: #d5d6de;
+}
+
+.form{
+    /* background-color: #B8B5FF; */
+    width: 80%;
+    border-radius: 20px;
+    padding: 50px;
+    background: linear-gradient(45deg, #d5d6de, #d6d6dd);
+    box-shadow:  37px 37px 74px #ababb2,-37px -37px 74px #ffffff;
+}
+
+.backbutton{
+    position: relative;
+    text-align: center;
+    background-color: #d5d6de;
+    align-content: center;
+    border: none;
+}
+
+.backbutton :hover{
+    /* background-color: #d5d6de; */
+    border: none;
+}
+
+

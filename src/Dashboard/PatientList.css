@@ -2,9 +2,8 @@
     position: relative;
     height: 90%;
     overflow-y: scroll;
-
 }
 img{
-    position: relative;
-    height: 50%;
+    margin-left: 30%;
+    height: 500px;
 }

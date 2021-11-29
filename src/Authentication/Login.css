@@ -1,3 +1,4 @@
+
 .input{
     margin: 5%;
 }
@@ -12,6 +13,9 @@
 
 }
 .button{
+    position: relative;
+    width: 30%;
+    margin: 3%;
     color: #14279B;
     background-color: transparent;
     border: 1px solid #14279B;
@@ -19,7 +23,7 @@
     padding: 5px 10px;
     transition: 0.3s;
 }
-
+ 
 .button:hover{
     color: white;
     background-color: #14279B;
@@ -28,7 +32,6 @@
     padding: 5px 10px;
 }
 .img{
-    position: relative;
-    height: 100%;
-    width: 100%;
+    margin: 0px;
+    padding: 0px;   
 }

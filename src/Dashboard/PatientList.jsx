@@ -87,23 +87,20 @@ export default function PatientList() {
             setData(dataArray);
             console.log(data);
         })
-    },[data]);
+    },[data.length]);
     if(data.length === 0)
     {
         return(
            <Container>
-               <h1 className = 'p-3'>
-                   Nothing to show...
-               </h1>
-               <img src = {nothing_image} alt = ''/>
+               <img className = "my-5" src = {nothing_image} alt = 'Nothing here image'/>
            </Container>
         );
     }
     else
     {
             return (
-                <Container className = 'table'>
-                    <Table responsive = {true} >
+                    <div className="wrapper">
+                    <Table >
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -161,7 +158,7 @@ export default function PatientList() {
                             })}
                         </tbody>
                     </Table>
-                </Container>
+                    </div>
             );
     }
 }

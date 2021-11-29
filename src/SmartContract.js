@@ -153,13 +153,13 @@ const simpelAbi = [
 const contractAddr = '0x6230BFBf4a84bF4FA33073FF971B40cCC213c34c';
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
 
-const setRecord = async () => {
+const setRecord = async (a,b,c) => {
     await window.ethereum.enable();
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0];
     const contract = new web3.eth.Contract(simpelAbi, contractAddr);
-    const gas = await contract.methods.createRecord('a', 'b', 'c').estimateGas();
-    const result = await contract.methods.createRecord('a', 'b','c').send({
+    const gas = await contract.methods.createRecord(a, b, c).estimateGas();
+    const result = await contract.methods.createRecord(a, b,c).send({
         from: account, gas
     })
     console.log(result);
@@ -169,10 +169,11 @@ export const getDoctorRecords =  async (length, doctorId) => {
   await window.ethereum.enable();
   const contract = new web3.eth.Contract(simpelAbi, contractAddr);
   const result = await contract.methods.getDoctor(length ,doctorId).call();
-  return result;
+  //return result;
+  console.log(result);
 };
 
-export const getPatientRecord = async (length, patientId) => {
+export const getPatientRecords = async (length, patientId) => {
   await window.ethereum.enable();
   const contract = new web3.eth.Contract(simpelAbi, contractAddr);
   const result = await contract.methods.getPatient(length ,patientId).call();
